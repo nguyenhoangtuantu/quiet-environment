@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nguyenhoangtuantu.github.io/quiet-environment/sitemap.xml
