@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chill Dashboard</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/music.js"></script>
+  </head>
+  <body>
+    <canvas id="particles"></canvas>
+
+    <div class="container">
+      <header>
+        <div id="clock">00:00:00</div>
+        <div id="greeting">Chào bạn!</div>
+      </header>
+
+      <div class="main-layout">
+        <!-- Left Panel - Controls -->
+        <div class="panel">
+          <h2>🎮 Controls</h2>
+          <button class="control-btn" onclick="toggleDarkMode()">
+            🌙 Dark Mode
+          </button>
+          <button class="control-btn" onclick="toggleParticles()">
+            ✨ Particles
+          </button>
+          <button class="control-btn" onclick="emojiRain()">
+            😊 Emoji Rain
+          </button>
+          <button class="control-btn" onclick="changeBackground()">
+            🎨 Change BG
+          </button>
+        </div>
+
+        <!-- Center Panel - Games -->
+        <div class="panel game-area">
+          <h2>🎯 Game Zone</h2>
+          <div class="game-tabs">
+            <button class="tab-btn active" onclick="switchGame(0)">
+              ✊ RPS
+            </button>
+            <button class="tab-btn" onclick="switchGame(1)">🎲 Dice</button>
+            <button class="tab-btn" onclick="switchGame(2)">🧠 Memory</button>
+            <button class="tab-btn" onclick="switchGame(3)">🐍 Snake</button>
+          </div>
+
+          <!-- RPS Game -->
+          <div class="game-content active" id="game0">
+            <h3 style="text-align: center">Kéo Búa Bao</h3>
+            <div class="rps-buttons">
+              <button class="rps-btn" onclick="playRPS('✊')">✊</button>
+              <button class="rps-btn" onclick="playRPS('✋')">✋</button>
+              <button class="rps-btn" onclick="playRPS('✌️')">✌️</button>
+            </div>
+            <div class="game-result" id="rpsResult">Chọn một lựa chọn!</div>
+          </div>
+
+          <!-- Dice Game -->
+          <div class="game-content" id="game1">
+            <h3 style="text-align: center">Lắc Xúc Xắc</h3>
+            <div class="dice-display" id="diceDisplay">🎲</div>
+            <button
+              class="control-btn"
+              onclick="rollDice()"
+              style="max-width: 200px; margin: 0 auto"
+            >
+              Lắc!
+            </button>
+            <div class="game-result" id="diceResult"></div>
+          </div>
+
+          <!-- Memory Game -->
+          <div class="game-content" id="game2">
+            <h3 style="text-align: center">Trò Chơi Trí Nhớ</h3>
+            <div class="game-result" id="memoryScore">Điểm: 0</div>
+            <div class="memory-grid" id="memoryGrid"></div>
+          </div>
+
+          <!-- Snake Game -->
+          <div class="game-content" id="game3">
+            <h3 style="text-align: center">Game Rắn Săn Mồi</h3>
+            <div class="game-result" id="snakeScore">Điểm: 0</div>
+            <canvas id="snakeCanvas" width="400" height="400"></canvas>
+            <div style="text-align: center; margin-top: 10px">
+              Dùng phím mũi tên để di chuyển
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Panel - Music & Quotes -->
+        <div class="panel">
+          <div class="music-player">
+            <h2>🎵 Music</h2>
+            <div class="track-list" id="trackList"></div>
+          </div>
+
+          <div>
+            <h2>💭 Quote</h2>
+            <div class="quote-box" id="quoteBox">Loading...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
